@@ -1,0 +1,33 @@
+page-picktwo {
+    .textbox{
+        border: 1px solid rgb(236, 234, 234);
+        margin: auto;
+        border-radius: 4px;
+        width: 90%;
+    }
+
+    .inside-text{
+        font-size: 18px;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        width: 87%;
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text
+    }
+    .text{
+        padding-top: 20px;
+        padding-bottom: 5px;
+        color: rgb(151, 151, 151);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 16px;
+        padding-left: 18px;
+    }
+    .delete{
+        color:rgb(243, 115, 115);
+        font-size: 40px;
+        float: right;
+        padding-right: 5px;
+    }
+}

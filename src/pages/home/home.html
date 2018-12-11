@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <div style="font-size: 25px; font-weight: 500; margin-left: 50px;">
+      MPAD MHEL
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6 text-left>
+          <img src="assets/imgs/fedex.png" style="height: 40px;" />
+        </ion-col>
+        <ion-col col-6 text-right>
+          <img src="assets/imgs/tnt.svg" style="height: 40px;" />
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div padding style="padding-top: 40px;">
+    <div class="tab">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-3>
+            <img src="assets/imgs/one.jpeg" class="image">
+          </ion-col>
+          <ion-col col-9 class="text">DELIVERY</ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <div class="tab" (click)="pick()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-3>
+            <img src="assets/imgs/two.jpeg" class="image">
+          </ion-col>
+          <ion-col col-9 class="text">PICKUP</ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <div class="tab">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-3>
+            <img src="assets/imgs/three.jpeg" class="image">
+          </ion-col>
+          <ion-col col-9 class="text">INBOUND</ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <div class="tab">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-3>
+            <img src="assets/imgs/four.jpeg" class="image">
+          </ion-col>
+          <ion-col col-9 class="text">OUTBOUND</ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <div class="tab">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-3>
+            <img src="assets/imgs/five.jpeg" class="image">
+          </ion-col>
+          <ion-col col-9 class="text">PAYMENT</ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <div class="tab" (click)="pending()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-3>
+            <img src="assets/imgs/six.jpeg" class="image">
+          </ion-col>
+          <ion-col col-9 class="text">PENDING UPLOADES</ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <div class="tab">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-3>
+            <img src="assets/imgs/seven.jpeg" class="image">
+          </ion-col>
+          <ion-col col-9 class="text">SETTINGS</ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>

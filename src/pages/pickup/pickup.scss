@@ -1,0 +1,29 @@
+page-pickup {
+    .textbox{
+        border: 1px solid rgb(236, 234, 234);
+        margin: auto;
+        border-radius: 4px;
+        width: 90%;
+        height: 35px;
+    }
+
+    .inside-text{
+        font-size: 15px;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        width: 87%;
+    }
+    .text{
+        padding-top: 20px;
+        padding-bottom: 5px;
+        color: rgb(151, 151, 151);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 16px;
+        padding-left: 18px;
+    }
+    .exp{
+        font-size: 18px;
+        color: red;
+        padding-left: 10px;
+    }
+}

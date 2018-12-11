@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar text-center>
+    <ion-title>PACKAGE PICKUP</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-toolbar no-border>
+    <div style="margin-left: 10px; font-size: 16px;">
+      DESCRIPTION
+    </div>
+  </ion-toolbar>
+  <br>
+  <div class="textbox">
+    <ion-textarea [(ngModel)]="description" rows="10" class="inside-text" type="text"></ion-textarea>
+  </div>
+
+  <ion-toolbar no-border style="margin-top: 10px;">
+    <div style="margin-left: 10px; font-size: 16px;">
+      IMAGES
+    </div>
+  </ion-toolbar>
+  <br>
+  <div *ngFor="let image of images" padding>
+    <img src="{{pathForImage(image.url)}}">
+    <div>
+      <ion-icon (click)="deleteNew(image.url)" class="delete" name="trash"></ion-icon>
+    </div>
+  </div>
+
+  <div text-right style="padding-right: 10px;">
+    <button color="dark" (click)="presentActionSheet()" ion-button icon-only style="border-radius: 100px;">
+      <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
+    </button>
+  </div>
+
+  <div text-center>
+    <button ion-button color="dark" style="width: 200px;" (click)="submit()">Next</button>
+  </div>
+</ion-content>

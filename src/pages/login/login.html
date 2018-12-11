@@ -1,0 +1,53 @@
+<ion-content padding>
+  <div text-center style="margin-top: 80px;">
+    <img src="assets/imgs/fedex.png" style="height: 60px;" />
+  </div>
+
+  <div padding *ngIf="login">
+    <ion-list>
+
+      <ion-item>
+        <ion-label  class="tag" floating>FedEx ID</ion-label>
+        <ion-input color="dark" [(ngModel)]="id" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="tag" floating>Password</ion-label>
+        <ion-input color="dark" [(ngModel)]="password" type="password"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <div padding>
+      <button ion-button full (click)="log()" color="dark">Sign In</button>
+    </div>
+  </div>
+
+  <div padding *ngIf="!login">
+    <ion-list>
+
+      <ion-item>
+        <ion-label floating>Username</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <div padding>
+      <button ion-button full (click)="register()">Register</button>
+    </div>
+
+  </div>
+
+
+</ion-content>

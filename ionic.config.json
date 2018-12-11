@@ -1,0 +1,7 @@
+{
+  "name": "MPAD",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

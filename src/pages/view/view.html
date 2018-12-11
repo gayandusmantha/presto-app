@@ -1,0 +1,104 @@
+<!--
+  Generated template for the ViewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>VIEW DISPATCH</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div *ngIf="show">
+
+
+    <ion-toolbar no-border class="head">
+      <div>
+        PACKAGE ID
+      </div>
+    </ion-toolbar>
+    <div class="body">
+      {{ref}}
+    </div>
+
+    <br>
+
+    <ion-toolbar no-border class="head">
+      <div>
+        CUSTOMER
+      </div>
+    </ion-toolbar>
+    <div class="body">
+      {{customer}}
+    </div>
+
+    <br>
+
+    <ion-toolbar no-border class="head">
+      <div>
+        ADDRESS
+      </div>
+    </ion-toolbar>
+    <div class="body">
+      {{address}}
+    </div>
+
+    <br>
+
+    <ion-toolbar no-border class="head">
+      <div>
+        INFORMATIONS
+      </div>
+    </ion-toolbar>
+    <div class="body">
+      Ready Time - {{redy_time}}
+      <br> Close Time - {{close_time}}
+      <br> Pickup Date - {{pickup_date}}
+      <br>
+    </div>
+
+    <br>
+
+    <ion-toolbar no-border class="head">
+      <div>
+        PHONE
+      </div>
+    </ion-toolbar>
+    <div class="body">
+      {{phone}}
+    </div>
+
+    <br>
+
+    <ion-toolbar no-border class="head">
+      <div>
+        CONTACT
+      </div>
+    </ion-toolbar>
+    <div class="body">
+      {{name}}
+    </div>
+
+    <br>
+
+    <ion-toolbar no-border class="head">
+      <div>
+        {{rekarks}}
+      </div>
+    </ion-toolbar>
+
+    <br>
+
+    <div padding>
+      <button ion-button full (click)="next()" color="dark">NEXT</button>
+    </div>
+
+
+
+  </div>
+</ion-content>
