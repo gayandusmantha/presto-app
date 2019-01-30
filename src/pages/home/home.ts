@@ -3,7 +3,9 @@ import { NavController, Events, AlertController } from 'ionic-angular';
 import { PickupPage } from '../../pages/pickup/pickup';
 import { PendingPage } from '../../pages/pending/pending';
 import { PicklistPage } from '../../pages/picklist/picklist';
+import { VanscanPage } from '../../pages/vanscan/vanscan';
 import { SaveProvider } from '../../providers/save/save';
+import { DeliverylistPage }  from '../../pages/deliverylist/deliverylist';
 import { Storage } from '@ionic/storage';
 import { OneSignal } from '@ionic-native/onesignal';
 import { ApiProvider } from '../../providers/api/api';
@@ -31,6 +33,15 @@ export class HomePage {
 
   pick() {
     this.navCtrl.push(PicklistPage);
+  }
+
+  delivery() {
+    this.navCtrl.push(DeliverylistPage);
+  }
+ 
+
+  vanscan() {
+    this.navCtrl.push(VanscanPage);
   }
 
   pending() {

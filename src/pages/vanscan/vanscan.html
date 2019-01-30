@@ -1,0 +1,39 @@
+<!--
+  Generated template for the VanscanPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title> VAN SCAN </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div>
+        <ion-row>
+         <p>  Number of package(s) :  {{ count }} </p>
+         <p>  Tracking Number(s) </p>
+         <p>  Enter the tracking number manually or click on barcoard
+            scanner icon </p>
+        </ion-row>
+        <ion-row>
+          <ion-col col-2 style="font-size: 30px;">
+            <ion-icon ios="ios-barcode" md="md-barcode" (click)="scan()"></ion-icon>
+          </ion-col>
+          <ion-col col-10>
+            <div class="textbox">
+              <ion-input [(ngModel)]="onet" placeholder="TRACKING NO." class="inside-text" type="text"></ion-input>
+            </div>
+          </ion-col>          
+        </ion-row>
+      </div>
+      <ion-item *ngFor="let s of datatset;  let i = index" >           
+        <h2> {{s.name}}   <a class="btn" (click)="remo(i)">Delete</a></h2>                 
+      </ion-item>
+      <button ion-button  (click)="submit()">SUBMIT </button>
+</ion-content>

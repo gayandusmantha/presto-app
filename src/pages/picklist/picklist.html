@@ -7,34 +7,26 @@
 <ion-header>
 
   <ion-navbar text-center>
-    <ion-title>PENDING PICKUP(S)</ion-title>
+    <ion-title>PENDING PICKUPS </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding *ngIf="show">
-  <ion-card *ngFor="let pick of picks" (click)="open(pick.id)">
-    <div text-right style="padding-right: 5px; font-weight: 500;">
-      #{{pick.id}}
-    </div>
-    <ion-card-header style="font-weight: 500;">
-      {{pick.ref}}
-    </ion-card-header>
-    <ion-card-content>
-      <div>
-        Customer Name : {{pick.customer}}
-      </div>
-      Ready Time : {{pick.redy_time}}
-      <div style="color: red;">
-        Close Time : {{pick.close_time}}
-      </div>
-
-    </ion-card-content>
-    <div style="height: 10px; width: 100%;background-color: rgb(253, 161, 56);">
-
-    </div>
-  </ion-card>
+    <ion-list>
+        <ion-item *ngFor="let pick of picks" (click)="open(pick.id)">  
+            <div text-right style="padding-right: 5px; font-weight: 500;">
+                #{{pick.id}}
+            </div>        
+          <h2> Customer Order ID   {{pick.ref}} </h2>
+          <h1> Supplier  {{pick.supplier}} </h1>
+          <h3> Item ID : {{pick.itemid}}  /   
+               Item Name  : {{pick.itemname}}  /
+               Qty  : {{pick.qty}} </h3>
+          <p>  Created  : {{pick.created_at}} </p>
+        </ion-item>
+      </ion-list>  
 </ion-content>
 
 <ion-content padding *ngIf="!show">

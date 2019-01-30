@@ -1,0 +1,35 @@
+<!--
+  Generated template for the DeliverylistPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title> Delivery List </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding *ngIf="show">
+  <ion-list>
+      <ion-item *ngFor="let pick of deliver" (click)="open(pick.id)">  
+          <div text-right style="padding-right: 5px; font-weight: 500;">
+              #{{pick.id}}
+          </div>        
+        <h2> Customer Order ID   {{pick.order_id}} </h2>
+        <h1> Supplier  {{pick.amount}} </h1>
+        <h3> Item ID : {{pick.order_time}}  /   
+             Item Name  : {{pick.order_time}}  /
+             Qty  : {{pick.order_time}} </h3>
+        <p>  Created  : {{pick.order_time}} </p>
+      </ion-item>
+    </ion-list>  
+</ion-content>
+<ion-content padding *ngIf="!show">
+  <div text-center style="font-size: 18px; font-weight: 500; margin-top: 170px;">
+    NO MORE PICKUPS
+  </div>
+</ion-content>

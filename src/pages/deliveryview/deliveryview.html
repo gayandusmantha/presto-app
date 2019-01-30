@@ -1,0 +1,50 @@
+<!--
+  Generated template for the DeliveryviewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title> Delivery  Info   </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>     
+      <div>
+        <div *ngFor="let choice of order_id" > 
+            <ion-toolbar no-border class="head">
+                <div>
+                Delivery INFO 
+                </div>
+              </ion-toolbar>   
+              <div class="body">
+                  Order ID  :  {{choice.order_id}} <br>
+                  Payment Method  :  {{choice.payment_method}} <br>
+                  Amount   :  {{choice.amount}}  <br>
+                  Customer Name :  {{choice.customer}}  <br>
+                  Customer Address :   {{choice.customeraddress}}  <br>
+                  Customer Phone :  {{choice.custoemrphone}}  <br>
+                </div>               
+                <div *ngFor="let qualifica of choice.item">
+                   Item Name  {{ qualifica.item_name }} <br>
+                   Qty   {{ qualifica.qty }}                                   
+                </div>
+             
+              </div>
+    </div>
+    <p> TRACKING NUMBERS  </p>
+      <ul>
+          <li *ngFor="let choice of tracking" >
+              {{choice.item_name}}
+              <ul>
+                  <li *ngFor="let qualifica of choice.tracking">
+                      {{ qualifica.tracking }}
+                  </li>
+               </ul>
+          </li>
+        </ul>
+        <div text-center>
+            <button ion-button color="dark" style="width: 200px;" (click)="next()" >Next</button>
+          </div>
+</ion-content>

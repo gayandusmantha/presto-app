@@ -13,18 +13,25 @@ import { PicktwoPage } from '../pages/picktwo/picktwo';
 import { PendingPage } from '../pages/pending/pending';
 import { PicklistPage } from '../pages/picklist/picklist';
 import { ViewPage } from '../pages/view/view';
+import { PickupsummaryPage } from '../pages/pickupsummary/pickupsummary';
+import { VanscanPage } from '../pages/vanscan/vanscan';
+import { DeliverylistPage } from '../pages/deliverylist/deliverylist';
+import { DeliveryviewPage } from '../pages/deliveryview/deliveryview';
+import { DeliverydonePage } from '../pages/deliverydone/deliverydone';
+import { DeliveryconfirmPage } from '../pages/deliveryconfirm/deliveryconfirm';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Camera } from '@ionic-native/camera';
 import { File } from '@ionic-native/file';
 import { FilePath } from '@ionic-native/file-path';
-import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { ApiProvider } from '../providers/api/api';
 import { IonicStorageModule } from '@ionic/storage';
 import { SaveProvider } from '../providers/save/save';
-//import { OneSignal } from '@ionic-native/onesignal';
+import { OneSignal } from '@ionic-native/onesignal';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +44,13 @@ import { SaveProvider } from '../providers/save/save';
     PicktwoPage,
     PendingPage,
     PicklistPage,
-    ViewPage
+    ViewPage,
+    PickupsummaryPage,
+    VanscanPage,
+    DeliverylistPage,
+    DeliveryviewPage,
+    DeliverydonePage,
+    DeliveryconfirmPage
   ],
   imports: [
     BrowserModule,
@@ -56,7 +69,13 @@ import { SaveProvider } from '../providers/save/save';
     PicktwoPage,
     PendingPage,
     PicklistPage,
-    ViewPage
+    ViewPage,
+    PickupsummaryPage,
+    VanscanPage,
+    DeliverylistPage,
+    DeliveryviewPage,
+    DeliverydonePage,
+    DeliveryconfirmPage
   ],
   providers: [
     StatusBar,
@@ -69,7 +88,8 @@ import { SaveProvider } from '../providers/save/save';
     FileTransferObject,
     BarcodeScanner,
     ApiProvider,
-    SaveProvider  
+    SaveProvider,
+    OneSignal
   ]
 })
 export class AppModule { }

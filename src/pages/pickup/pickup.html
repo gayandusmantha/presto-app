@@ -52,7 +52,7 @@
   <div *ngIf="!expshow">
     <ion-toolbar no-border style="margin-top: 20px;">
       <div style="margin-left: 10px; font-size: 16px;">
-        TRACKING NUMBER(S) & FORM ID(S)
+        TRACKING NUMBER(S)  
       </div>
     </ion-toolbar>
     <div style="font-size: 12px;" text-center padding>
@@ -60,104 +60,23 @@
     </div>
 
     <div padding>
-      <ion-grid>
-        <div *ngIf="one">
-          <ion-row>
-            <ion-col col-2 style="font-size: 30px;">
-              <ion-icon ios="ios-barcode" md="md-barcode" (click)="scan(1)"></ion-icon>
-            </ion-col>
-            <ion-col col-7>
-              <div class="textbox">
-                <ion-input [(ngModel)]="onet" placeholder="TRACKING NO." class="inside-text" type="text"></ion-input>
-              </div>
-            </ion-col>
-            <ion-col col-3>
-              <div class="textbox">
-                <ion-input [(ngModel)]="onei" placeholder="FID" class="inside-text" type="text"></ion-input>
-              </div>
-            </ion-col>
-          </ion-row>
-        </div>
-        <div *ngIf="two">
-          <ion-row>
-            <ion-col col-2 style="font-size: 30px;">
-              <ion-icon ios="ios-barcode" md="md-barcode" (click)="scan(2)"></ion-icon>
-            </ion-col>
-            <ion-col col-7>
-              <div class="textbox">
-                <ion-input [(ngModel)]="twot" placeholder="TRACKING NO." class="inside-text" type="text"></ion-input>
-              </div>
-            </ion-col>
-            <ion-col col-3>
-              <div class="textbox">
-                <ion-input [(ngModel)]="twoi" placeholder="FID" class="inside-text" type="text"></ion-input>
-              </div>
-            </ion-col>
-          </ion-row>
-        </div>
-        <div *ngIf="three">
-          <ion-row>
-            <ion-col col-2 style="font-size: 30px;">
-              <ion-icon ios="ios-barcode" md="md-barcode" (click)="scan(3)"></ion-icon>
-            </ion-col>
-            <ion-col col-7>
-              <div class="textbox">
-                <ion-input [(ngModel)]="threet" placeholder="TRACKING NO." class="inside-text" type="text"></ion-input>
-              </div>
-            </ion-col>
-            <ion-col col-3>
-              <div class="textbox">
-                <ion-input [(ngModel)]="threei" placeholder="FID" class="inside-text" type="text"></ion-input>
-              </div>
-            </ion-col>
-          </ion-row>
-        </div>
-        <div *ngIf="four">
-          <ion-row>
-            <ion-col col-2 style="font-size: 30px;">
-              <ion-icon ios="ios-barcode" md="md-barcode" (click)="scan(4)"></ion-icon>
-            </ion-col>
-            <ion-col col-7>
-              <div class="textbox">
-                <ion-input [(ngModel)]="fourt" placeholder="TRACKING NO." class="inside-text" type="text"></ion-input>
-              </div>
-            </ion-col>
-            <ion-col col-3>
-              <div class="textbox">
-                <ion-input [(ngModel)]="fouri" placeholder="FID" class="inside-text" type="text"></ion-input>
-              </div>
-            </ion-col>
-          </ion-row>
-        </div>
-        <div *ngIf="five">
-          <ion-row>
-            <ion-col col-2 style="font-size: 30px;">
-              <ion-icon ios="ios-barcode" md="md-barcode" (click)="scan( )"></ion-icon>
-            </ion-col>
-            <ion-col col-7>
-              <div class="textbox">
-                <ion-input [(ngModel)]="fivet" placeholder="TRACKING NO." class="inside-text" type="text"></ion-input>
-              </div>
-            </ion-col>
-            <ion-col col-3>
-              <div class="textbox">
-                <ion-input [(ngModel)]="fivei" placeholder="FID" class="inside-text" type="text"></ion-input>
-              </div>
-            </ion-col>
-          </ion-row>
-        </div>
-      </ion-grid>
-
-      <div text-right style="padding-right: 10px;">
-        <button color="dark" (click)="add()" ion-button icon-only style="border-radius: 100px;">
-          <ion-icon name="add"></ion-icon>
-        </button>
-      </div>
+        <ion-grid>
+            <ion-row *ngFor="let s of datatset;  let i = index">
+                <ion-col col-2 style="font-size: 30px;">
+                    <ion-icon ios="ios-barcode" md="md-barcode" (click)="scan(i)"></ion-icon>
+                  </ion-col>
+            <ion-col col-8>
+                <div class="textbox">
+              <ion-input  [(ngModel)]="s.name"  placeholder="TRACKING NO." class="inside-text" type="text" ></ion-input>  
+              </div>              
+              </ion-col>  
+        </ion-row>    
+      </ion-grid>     
     </div>
 
     <ion-toolbar no-border style="margin-top: 20px; margin-bottom: 20px;">
       <div style="margin-left: 10px; font-size: 16px;">
-        NUMBER OF PACKAGE - {{index}}
+        NUMBER OF PACKAGE -  {{qty}}
       </div>
     </ion-toolbar>
 

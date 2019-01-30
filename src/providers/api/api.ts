@@ -22,9 +22,29 @@ export class ApiProvider {
       .map(res => res.json());
   }
 
-  getExceptions(id) {
-    return this.http.get(this.url_head + 'mpad/settings/execption/id/' + '1')
+  completePickUp(id) {
+    return this.http.get(this.url_head + 'mpad/courier/compickup/id/' + id)
       .map(res => res.json());
+  }
+
+  getExceptions(id) {
+    return this.http.get(this.url_head + 'mpad/settings/execption/id/' + id)
+      .map(res => res.json());
+  }
+
+  pendingDelivery(id) {
+    return this.http.get(this.url_head + 'mpad/dispatch/dispatch/id/' + id)
+      .map(res => res.json());
+  }
+
+  trackingDelivery(id) {
+    return this.http.get(this.url_head + 'mpad/dispatch/tracking/id/' + id)
+      .map(res => res.json());
+  }
+
+  getOneDelivery(id){
+    return this.http.get(this.url_head + 'mpad/dispatch/dispatchone/id/' + id)
+    .map(res => res.json());
   }
 
   getOnePick(id) {
@@ -32,16 +52,22 @@ export class ApiProvider {
       .map(res => res.json());
   }
 
-  addPickup(pickup_id, fid, pack, description, tracking_id) {
+  addVanScan(data) {
+    let val = {
+      tracking: data,  
+      courier: this.save.id      
+    }
+    return this.http.put(this.url_head + 'mpad/dispatch/vanscan', val)
+      .map(res => res.json());
+   }
+
+  addPickup(pickup_id, qty, description, tracking_id) {
     let data = {
-      pickup_id: pickup_id,
-      fid: fid,
-      pack: pack,
+      pickup_id: pickup_id,           
       description: description,
       tracking_id: tracking_id,
       exception: '-999',
-      courier: this.save.id,
-      date: ''
+      courier: this.save.id      
     }
     console.log(data);
 
@@ -51,8 +77,7 @@ export class ApiProvider {
 
   addError(pickup_id, exception) {
     let data = {
-      pickup_id: pickup_id,
-      fid: '',
+      pickup_id: pickup_id, 
       pack: '',
       description: '',
       tracking_id: '',
@@ -63,6 +88,31 @@ export class ApiProvider {
     return this.http.put(this.url_head + 'mpad/pickup/pickupsummary', data, this.options)
       .map(res => res.json());
   }
+
+  completeDelivery(orderid, description) {
+    let data = {
+      orderid: orderid,           
+      description: description,    
+      exception: '-999',
+      courier: this.save.id      
+    }
+    console.log(data);
+
+    return this.http.put(this.url_head + 'mpad/dispatch/dispatchsummary', data, this.options)
+      .map(res => res.json());
+  }
+
+  deliveryError(orderid, exception) {
+    let data = {
+      orderid: orderid, 
+      description: "",  
+      exception: exception,    
+      courier: this.save.id   
+    }
+    return this.http.put(this.url_head + 'mpad/dispatch/dispatchsummary', data, this.options)
+      .map(res => res.json());
+  }
+
 
   adDeviceId(fid, deviceid) {
     let data = {

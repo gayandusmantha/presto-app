@@ -1,0 +1,86 @@
+<!--
+  Generated template for the DeliverydonePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Delivery Done </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-toolbar no-border>
+        <div style="margin-left: 10px; font-size: 16px;">
+          PACKAGE(S)  DELIVERD
+        </div>
+      </ion-toolbar>
+      <div>
+        <ion-list radio-group [(ngModel)]="pickup">
+          <ion-item no-lines>
+            <ion-label color="dark">Yes</ion-label>
+            <ion-radio (click)="yes()" value="yes" color="dark"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label color="dark">No</ion-label>
+            <ion-radio (click)="no()" color="dark" value="no"></ion-radio>
+          </ion-item>
+        </ion-list>
+      </div>
+      <div padding *ngIf="expshow">
+          <ion-list style="border-style: solid; color: red;">
+            <button style="color: rgb(236, 89, 89);" ion-item *ngFor="let exp of exceptions" (click)="itemSelected(exp.id)">
+              {{ exp.message }}
+            </button>
+          </ion-list>
+      
+          <ion-toolbar no-border style="margin-top: 20px;">
+            <div style="margin-left: 10px; font-size: 16px;">
+              EXCEPTION
+            </div>
+          </ion-toolbar>
+          <div class="exp">
+            {{exp}}
+            <br>
+            <br>
+          </div>
+      
+          <div text-center>
+            <button ion-button color="dark" style="width: 200px;" (click)="submit()" [disabled]="!exp">Submit</button>
+          </div>
+        </div>
+        <div *ngIf="!expshow">
+            <ion-toolbar no-border style="margin-top: 20px;">
+              <div style="margin-left: 10px; font-size: 16px;">
+                TRACKING NUMBER(S)  
+              </div>
+            </ion-toolbar>
+           
+            <ul>
+                <li *ngFor="let choice of tracking" >
+                    {{choice.item_name}}
+                    <ul>
+                        <li *ngFor="let qualifica of choice.tracking">
+                            {{ qualifica.tracking }}                               
+                        </li>
+                     </ul>
+                </li>
+              </ul>
+
+              <ion-item>
+                  <ion-label> Collected By  </ion-label>
+                  <ion-textarea [(ngModel)]="collected" name="description"></ion-textarea>
+                   {{ collected }}
+                </ion-item>
+
+                <div text-center>
+                <button ion-button color="dark" style="width: 200px;" (click)="submitcomplte()" [disabled]="!collected" >Next</button>
+                  </div>
+            
+        </div>
+
+</ion-content>

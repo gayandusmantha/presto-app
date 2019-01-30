@@ -1,14 +1,14 @@
 webpackJsonp([2],{
 
-/***/ 298:
+/***/ 310:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PicktwoPageModule", function() { return PicktwoPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PickupsummaryPageModule", function() { return PickupsummaryPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__picktwo__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pickupsummary__ = __webpack_require__(116);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var PicktwoPageModule = (function () {
-    function PicktwoPageModule() {
+var PickupsummaryPageModule = (function () {
+    function PickupsummaryPageModule() {
     }
-    PicktwoPageModule = __decorate([
+    PickupsummaryPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__picktwo__["a" /* PicktwoPage */],
+                __WEBPACK_IMPORTED_MODULE_2__pickupsummary__["a" /* PickupsummaryPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__picktwo__["a" /* PicktwoPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__pickupsummary__["a" /* PickupsummaryPage */]),
             ],
         })
-    ], PicktwoPageModule);
-    return PicktwoPageModule;
+    ], PickupsummaryPageModule);
+    return PickupsummaryPageModule;
 }());
 
-//# sourceMappingURL=picktwo.module.js.map
+//# sourceMappingURL=pickupsummary.module.js.map
 
 /***/ })
 

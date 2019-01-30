@@ -2,15 +2,16 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform, Events } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { MenuPage } from '../pages/menu/menu';
 import { LoginPage } from '../pages/login/login';
 import { PickupPage } from '../pages/pickup/pickup';
 import { PicktwoPage } from '../pages/picktwo/picktwo';
-import { Storage } from '@ionic/storage';
 import { PicklistPage } from '../pages/picklist/picklist';
+import { PickupsummaryPage } from '../pages/pickupsummary/pickupsummary';
+import { Storage } from '@ionic/storage';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -42,9 +43,8 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'HOME', component: HomePage, icon: 'md-home' },
-      { title: 'MY ACTIVITES', component: ListPage, icon: 'ios-person' },
-      { title: 'LIVE CHAT', component: ListPage, icon: 'md-send' },
-      { title: 'ESGR', component: HomePage, icon: 'md-globe' },
+      { title: 'PICKUP SUMMARY', component: PickupsummaryPage, icon: 'ios-person' },
+      { title: 'LIVE CHAT', component: ListPage, icon: 'md-send' },    
       { title: 'SIGN OUT', component: LoginPage, icon: 'log-out' }
     ];
   }
@@ -56,7 +56,7 @@ export class MyApp {
         if (val) {
           this.rootPage = HomePage;
         } else {
-          this.rootPage = MenuPage;
+          this.rootPage = LoginPage;
         }
       });
       // Okay, so the platform is ready and our plugins are available.
@@ -68,10 +68,10 @@ export class MyApp {
         console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
       };
 
-      // window["plugins"].OneSignal
-      //   .startInit("bd6adb16-be61-4dea-93b4-727e69944c3a", "320924028204")
-      //   .handleNotificationOpened(notificationOpenedCallback)
-      //   .endInit();
+      window["plugins"].OneSignal
+        .startInit("bd6adb16-be61-4dea-93b4-727e69944c3a", "320924028204")
+        .handleNotificationOpened(notificationOpenedCallback)
+        .endInit();
     });
   }
 

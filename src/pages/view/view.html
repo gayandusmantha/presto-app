@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title text-center>VIEW DISPATCH</ion-title>
+    <ion-title text-center> PICKUP INFO</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,90 +15,39 @@
 
 <ion-content>
   <div *ngIf="show">
-
-
     <ion-toolbar no-border class="head">
       <div>
-        PACKAGE ID
+        ORDER ID
       </div>
     </ion-toolbar>
     <div class="body">
-      {{ref}}
+      {{order_id}}
     </div>
-
     <br>
-
     <ion-toolbar no-border class="head">
       <div>
-        CUSTOMER
+        SUPPLIER
       </div>
     </ion-toolbar>
     <div class="body">
-      {{customer}}
+       <h2>  {{supplier}} </h2>
+      <br> PHONE  - {{supphone}}
+      <br> ADDRESS  - {{supaddress}}
     </div>
-
     <br>
-
-    <ion-toolbar no-border class="head">
-      <div>
-        ADDRESS
-      </div>
-    </ion-toolbar>
-    <div class="body">
-      {{address}}
-    </div>
-
-    <br>
-
     <ion-toolbar no-border class="head">
       <div>
         INFORMATIONS
       </div>
     </ion-toolbar>
     <div class="body">
-      Ready Time - {{redy_time}}
-      <br> Close Time - {{close_time}}
-      <br> Pickup Date - {{pickup_date}}
-      <br>
+       ITEM NAME   - {{item_name}}      
+      <br>  ITEM CODE   - {{item_id}}
+      <br>  QTY   - {{qty}}
     </div>
-
-    <br>
-
-    <ion-toolbar no-border class="head">
-      <div>
-        PHONE
-      </div>
-    </ion-toolbar>
-    <div class="body">
-      {{phone}}
-    </div>
-
-    <br>
-
-    <ion-toolbar no-border class="head">
-      <div>
-        CONTACT
-      </div>
-    </ion-toolbar>
-    <div class="body">
-      {{name}}
-    </div>
-
-    <br>
-
-    <ion-toolbar no-border class="head">
-      <div>
-        {{rekarks}}
-      </div>
-    </ion-toolbar>
-
-    <br>
-
+    <br> 
     <div padding>
       <button ion-button full (click)="next()" color="dark">NEXT</button>
     </div>
-
-
-
   </div>
 </ion-content>
